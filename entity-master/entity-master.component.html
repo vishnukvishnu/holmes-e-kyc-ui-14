@@ -1,0 +1,166 @@
+<div class="entity-header-navigation" [ngClass]="user ? 'close-width' : ''">
+  <ul>
+    <li><a>Home</a></li>
+    <li routerLink="/home" routerLinkActive="entity-master">
+      <a class="active-route">Entity Master</a>
+    </li>
+    <li><a>My Inbox</a></li>
+    <li><a>Team Inbox</a></li>
+    <li><a>Team Email Inbox</a></li>
+    <li><a>Reports</a></li>
+    <li><a>Admin </a></li>
+  </ul>
+</div>
+
+<div class="absolute-container" [ngClass]="user ? 'close-width' : ''">
+  <div class="table-container">
+    <p class="title pb-2">Entity Master</p>
+    <div class="row entries-wrapper">
+      <div class="search-wrapper">
+        <input [(ngModel)]="searchText" type="text"
+          placeholder="Search Client ID or Client Name or Client Location or Case ID" />
+        <img src="../../assets//images/icon-search.svg" alt="" />
+      </div>
+      <div class="advanced-search" (click)="popupOpen()">
+        <button type="text">
+          Advanced Search
+          <img src="../../assets//images/icon-search.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="col-sm-9 search-error-wrapper" *ngIf="GetSearchdata">
+        <div class="clear-all mt-2" (click)="clearAll()">
+          <p>
+            Clear all
+            <img src="../../assets//images/cancel-white.png" alt="" />
+          </p>
+        </div>
+        <div class="clear-all-values">
+          <div class="error mt-2" *ngIf="GetSearchdata.clientid" (click)="clearClientid()">
+            <p>
+              Client Name:{{GetSearchdata.clientid}}
+              <img src="../../assets//images/cancel-red.png" alt="" />
+            </p>
+          </div>
+          <div class="error mt-2" *ngIf="GetSearchdata.location" (click)="location()">
+            <p>
+              Client Name: {{GetSearchdata.location}}
+              <img src="../../assets//images/cancel-red.png" alt="" />
+            </p>
+          </div>
+          <div class="error mt-2" *ngIf="GetSearchdata.clientname" (click)="clientname()">
+            <p>
+              Client Name: {{GetSearchdata.clientname}}
+              <img src="../../assets//images/cancel-red.png" alt="" />
+            </p>
+          </div>
+          <div class="error mt-2" *ngIf="GetSearchdata.createid" (click)="createid()">
+            <p>
+              Client Name: {{GetSearchdata.createid}}
+              <img src="../../assets//images/cancel-red.png" alt="" />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrapper mt-3" matSort (matSortChange)="sortData($event)">
+      <div class="row mr-0 ml-0">
+        <div class="col-2 th" mat-sort-header="clientid">
+          Client ID
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="col-2 th" mat-sort-header="clientname">
+          Client Name
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="col-2 th" mat-sort-header="clienttype">
+          Client Type
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="col-2 th" mat-sort-header="location">
+          Client Location
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="col-2 th" mat-sort-header="event">
+          Event In Progress
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="col-2 th" mat-sort-header="createid">
+          Created By
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+      </div>
+
+      <div class="table-body-row">
+        <div class="row mr-0 ml-0 "
+          *ngFor="let user of filteredUsers | filter: searchByKeyword:'name' | grdFilter: {clientid:searchText,clientname:searchText,location:searchText,createid:searchText}; let i = index">
+          <!-- <div class="col-2 td td-id" data-toggle="collapse" [attr.data-target]="'#demo' + i"
+            (click)="accordianToggle(i)">
+            <img src="../../assets//images/add-icon.png" [id]="'accordianPlus' + i" class="mr-2" alt="" />
+            <img src="../../assets//images/minus-icon.png" [id]="'accordianMinus' + i" class="mr-2 inActive" alt="" />
+            {{ user.clientid }}
+          </div> -->
+          <div class="col-2 td">{{ user.clientname }}</div>
+          <div class="col-2 td">{{ user.clienttype }}</div>
+          <div class="col-2 td">{{ user.location }}</div>
+          <div class="col-2 td td-event" [style.color]="user.color">
+            <span [style.background]="user.color" class="dot"></span>{{ user.event }}</div>
+          <div class="col-2 td td-created-id" (click)="entityData()">
+            {{ user.createid }}
+            <img src="../../assets//images/iconfinder.png" class="float-right" alt="" />
+          </div>
+          <div class="col-12 table-sub-wrapper collapse" [id]="'demo' + i" matSort
+            (matSortChange)="casesortData($event)">
+            <div class="row mr-0 ml-0 table-header">
+              <div class="col-sm-1 th" mat-sort-header="caseId">
+                Case ID
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-1 th pr-0" mat-sort-header="caseType">
+                Case Type
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-2 th" mat-sort-header="caseStatus">
+                Case Status
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-2 th" mat-sort-header="unit">
+                Business Unit
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-2 th" mat-sort-header="updata">
+                Updated By
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-2 th" mat-sort-header="updateDate">
+                UPdated Date
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+              <div class="col-sm-2 th" mat-sort-header="create">
+                Created By
+                <img src="../../assets//images/sort-arrows.png" alt="" />
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-12 table-body">
+                <div class="row" *ngFor="let case of casesortedData">
+                  <div class="col-1 td">{{ case.caseId }}</div>
+                  <div class="col-1 td">{{ case.caseType }}</div>
+                  <div class="col-2 td">{{ case.caseStatus }}</div>
+                  <div class="col-2 td">{{ case.unit }}</div>
+                  <div class="col-2 td">{{ case.updata }}</div>
+                  <div class="col-2 td">{{ case.updateDate }}</div>
+                  <div class="col-2 td">{{ case.create }}
+                    <img src="../../assets//images/iconfinder.png" class="float-right" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

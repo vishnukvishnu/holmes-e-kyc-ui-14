@@ -1,0 +1,53 @@
+@import '../../scss/variable';
+
+.comments-details-container {
+  .title {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    padding: 30px 0px;
+    font-size: 17px;
+    font-family: 'OpenSans-SemiBold';
+    color: color(navy-blue);
+  }
+
+  .comments-details-wrapper {
+
+    .col-sm-12 {
+      padding: 5px 0px;
+      font-size: 14px;
+
+      .name {
+        font-family: 'OpenSans-Regular';
+      }
+
+      .strong-name {
+        font-family: 'OpenSans-SemiBold';
+        display: inline-block;
+        font-weight: 700;
+        color: color(black);
+      }
+
+      .comment {
+        font-family: '/OpenSans-Italic';
+        display: inline-block;
+      }
+    }
+
+  }
+
+  textarea {
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 6px 10px;
+    background: #fff;
+    border: 1.5px solid color(light-blue);
+    color: color(light-blue);
+    text-align: left;
+    font-size: 17px;
+    font-family: 'OpenSans-SemiBold';
+    min-width: 130px;
+    margin-top: 12px;
+  }
+}

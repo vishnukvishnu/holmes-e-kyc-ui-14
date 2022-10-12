@@ -1,0 +1,133 @@
+@import '../../scss/variable';
+
+.client-details {
+  .left-section {
+    border-right: 1px solid #E0E0E0;
+    padding: 5px 30px;
+
+    .scroll-bar .label-box {
+      border-bottom: 1px solid #E0E0E0;
+    }
+
+    .label-box {
+      padding: 11px 0px 11px 0px !important;
+      font-family: 'OpenSans-SemiBold';
+      color: #5D5A5A;
+
+      .label {
+        font-size: 15px;
+      }
+
+      .value {
+        float: right;
+        font-size: 14px;
+      }
+    }
+
+    .search-wrapper {
+      position: relative;
+
+      input {
+        border-radius: 4px;
+        border: 1px solid #CCCCCC;
+        padding: 6px 14px;
+        width: 100%;
+      }
+
+      img {
+        position: absolute;
+        top: 18px;
+        right: 8px;
+        width: 20px;
+      }
+    }
+
+  }
+
+  .right-section {
+    padding: 5px 30px;
+
+    .address-box:first-child {
+      margin-top: 40px;
+    }
+
+    .address-box {
+      box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.24);
+      border-radius: 4px;
+      margin-top: 26px;
+      font-family: 'OpenSans-SemiBold';
+
+      .header {
+        background: #F1F1F1;
+        padding: 5px 15px;
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+
+      .description {
+        display: table;
+        padding: 16px;
+        font-size: 12px;
+
+        .icon {
+          display: inline-block;
+          margin-right: 10px;
+          margin-top: 5px;
+          width: 20px;
+        }
+
+        .details {
+          display: table-cell;
+        }
+      }
+    }
+  }
+
+}
+
+.scroll-bar {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 375px;
+  padding-right: 4px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.scroll-bar::-webkit-scrollbar {
+  width: 2px !important;
+  background-color: #fff;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .3) !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .client-details {
+    .left-section {
+      padding-left: 0px;
+      padding-right: 0px;
+
+      .label-box {
+        .label {
+          font-size: 10px;
+        }
+
+        .value {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .right-section {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+}

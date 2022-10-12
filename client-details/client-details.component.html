@@ -1,0 +1,50 @@
+ <div class="row client-details mr-0 ml-0">
+   <div class="col-sm-6 left-section">
+     <div class="col-sm-12 search-wrapper label-box ">
+       <input type="text" placeholder="Search">
+       <img src="../../assets//images/icon-search.svg" alt="">
+     </div>
+     <div class="scroll-bar">
+       <div class="col-sm-12 label-box pl-3" *ngFor="let user of clientDetails">
+         <span class="label">{{user.name}}</span>
+         <span class="value">{{user.value}}</span>
+       </div>
+     </div>
+   </div>
+   <div class="col-sm-6 right-section">
+     <div class="address-box">
+       <p class="header">Registered Address</p>
+       <div class="description">
+         <img src="../assets/images/location.svg" alt="" class="icon">
+         <p class="details">
+           Wipro Limited
+           2nd & 3rd Floor, Panorama House, Subhash Chandra Bose Rd, Kathrikadavu-Vytila Rd
+           0484 400 1252
+         </p>
+       </div>
+     </div>
+     <div class="address-box">
+       <p class="header">Business Operating Address</p>
+       <div class="description">
+         <img src="../assets/images/location.svg" alt="" class="icon">
+         <p class="details">
+           Wipro Limited
+           2nd & 3rd Floor, Panorama House, Subhash Chandra Bose Rd, Kathrikadavu-Vytila Rd
+           0484 400 1252
+         </p>
+       </div>
+     </div>
+     <div class="address-box">
+       <p class="header">Correspondence Address</p>
+       <div class="description">
+         <img src="../assets/images/location.svg" alt="" class="icon">
+         <p class="details">
+           Wipro Limited
+           2nd & 3rd Floor, Panorama House, Subhash Chandra Bose Rd, Kathrikadavu-Vytila Rd
+           0484 400 1252
+         </p>
+       </div>
+     </div>
+   </div>
+
+ </div>

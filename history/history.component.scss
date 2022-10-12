@@ -1,0 +1,86 @@
+.history-wrapper {
+  overflow: hidden;
+  margin-left: 45px;
+}
+
+.step {
+  padding: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.v-stepper {
+  position: relative;
+  height: 80px;
+}
+
+
+/* regular step */
+.step .circle {
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 100%;
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+}
+
+.step .line {
+  top: 16px;
+  left: 5px;
+  height: 100%;
+  position: absolute;
+  border-left: 3px solid gray;
+}
+
+.step.completed .circle {
+  visibility: visible;
+  background-color: rgb(6, 150, 215);
+  border-color: rgb(6, 150, 215);
+}
+
+.step.completed .line {
+  border-left: 3px solid rgb(6, 150, 215);
+}
+
+.step.active .circle {
+  visibility: visible;
+  border-color: rgb(6, 150, 215);
+}
+
+.step.empty .circle {
+  visibility: hidden;
+}
+
+.step.empty .line {
+  top: 0;
+  height: 150%;
+}
+
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1;
+  /* behind the circle to completely hide */
+}
+
+.content {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.step:last-child .v-stepper {
+  height: 10px !important;
+}
+
+.case-number {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+  .history-wrapper {
+    margin-left: 10px;
+  }
+}

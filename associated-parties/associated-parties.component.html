@@ -1,0 +1,82 @@
+<div class="associated-parties-wrapper">
+  <div class="row create-wrapper mr-0 ml-0 pl-0">
+    <button class="">
+      <img src="../assets/images/add.png" alt="" />
+      <span>Create New</span>
+    </button>
+
+    <div class="associate-type col-sm-8">
+      <div class="row">
+        <div class="col-sm-3 pr-0">
+          <label for="">Association Type </label>
+        </div>
+        <div class="col-sm-6">
+          <select name="">
+            <option value=""> Select all</option>
+            <option value=""> phrase/slot</option>
+            <option value=""> phrase/slot</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row table-container mr-0 ml-0">
+    <div class="col-sm-12 table table-wrapper mt-3 fold-table" matSort (matSortChange)="sortData($event)">
+      <div class="row thead">
+        <div class="th associate-small" mat-sort-header="id">
+          ID
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th associate-big" mat-sort-header="entityName">
+          Legal Entity Name
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th" mat-sort-header="relationship">
+          Relationship
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th" mat-sort-header="relatedto">
+          Related To
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th associate-small" mat-sort-header="ownership">
+          Ownership
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th" mat-sort-header="updatedby">
+          Updated By
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+        <div class="th associate-big" mat-sort-header="updatedDate">
+          Updated Date
+          <img src="../../assets//images/sort-arrows.png" alt="" />
+        </div>
+      </div>
+      <div class="table-body">
+        <div class="row tbody" *ngFor="let item of sortedData">
+          <div class="td td-id associate-small">{{ item.id }}</div>
+          <div class="td associate-big">
+            {{ item.entityName }}
+          </div>
+          <div class="td">
+            {{ item.relationship }}
+          </div>
+          <div class="td">
+            {{ item.relatedto }}
+          </div>
+          <div class="td associate-small">
+            {{ item.ownership }}
+          </div>
+          <div class="td">
+            {{ item.updatedby }}
+          </div>
+          <div class="td associate-big">
+            {{ item.updatedDate }}
+            <img src="../../assets//images/icons8-profile-80.png" class="float-right" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+@import '../../scss/variable';
+
+.close-width {
+  width: 90% !important;
+  margin-left: 7% !important;
+}
+
+.absolute-container {
+  top: 74px;
+  position: absolute;
+  width: 76%;
+  margin-left: 21%;
+  transition: 0.5s;
+
+  .manage-aliase-wrapper {
+    height: auto;
+    background: #fff;
+    margin: 25px 0%;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.24);
+    width: 100%;
+    border-radius: 4px;
+    padding: 6px 20px 16px 20px;
+    position: relative;
+
+    .slide-arrow {
+      display: inline-block;
+      position: absolute;
+      top: 13px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 25px;
+      font-family: 'OpenSans-SemiBold';
+      margin-bottom: 0px;
+      display: inline-block;
+      margin-left: 28px;
+      color: color(navy-blue);
+    }
+
+    .input-box {
+
+      input {
+        width: 100%;
+        border: 1px solid color(gray);
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .absolute-container {
+    .manage-aliase-wrapper {
+      padding: 6px 10px 16px 10px;
+    }
+  }
+
+  .close-width {
+    width: 76% !important;
+    margin-left: 21% !important;
+  }
+}

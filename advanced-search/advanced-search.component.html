@@ -1,0 +1,32 @@
+<div class="overlay" [ngClass]="popup ? 'show':'hide'" (click)="overlayHide()"></div>
+<form novalidate [formGroup]="form" class="form-container" [ngClass]="popup ? 'show':'hide'">
+  <p>Advance Search Details</p>
+  <div class="row wrapper">
+    <div class="col-sm-6 pr-5">
+      <div class="row  mb-4">
+        <label class="col-4" for="">Client ID</label>
+        <input class="col-8" type="text" formControlName="clientid" placeholder="Enter client ID" />
+      </div>
+      <div class="row">
+        <label class="col-4" for="">Client Location</label>
+        <input class="col-8" type="text" formControlName="location" placeholder="Enter location" />
+      </div>
+
+    </div>
+    <div class="col-sm-6 pl-5">
+      <div class="row mb-4">
+        <label class="col-4" for="">Client Name</label>
+        <input class="col-8" type="text" formControlName="clientname" placeholder="Enter client name" />
+      </div>
+      <div class="row">
+        <label class="col-4" for="">Created By</label>
+        <input class="col-8" type="text" formControlName="createid" placeholder="created by" />
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 mt-4 pr-0">
+      <button type="submit" class="float-right apply" [disabled]="btnValid" (click)="search(form.value)">Apply</button>
+      <button class="float-right mr-3 cancel" (click)="overlayHide()">Cancel</button>
+    </div>
+  </div>
+</form>

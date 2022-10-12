@@ -1,0 +1,107 @@
+  <div class="associated-parties-wrapper">
+
+
+    <div class="row create-wrapper mr-0 ml-0">
+      <button class="mr-5">
+        <img src="../assets/images/add.png" alt="">
+        <span>Add Task</span>
+      </button>
+
+      <div class="associate-type col-sm-9">
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="">Case Type </label>
+          </div>
+          <div class="col-sm-4 pl-0">
+            <select name="" id="">
+              <option value=""> Select all</option>
+              <option value=""> phrase/slot</option>
+              <option value=""> phrase/slot</option>
+            </select>
+          </div>
+          <div class="col-sm-2 pr-0">
+            <label for="">Case Status </label>
+          </div>
+          <div class="col-sm-4 pl-0">
+            <select name="" id="">
+              <option value=""> Select all</option>
+              <option value=""> phrase/slot</option>
+              <option value=""> phrase/slot</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row table-container mr-0 ml-0">
+      <div class="col-sm-12 table table-wrapper mt-3 fold-table" matSort (matSortChange)="sortData($event)">
+        <div class="row thead mr-0">
+          <div class="th" mat-sort-header="caseName">
+            Case Name
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="required">Required for Stage
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="activity">Activity Name
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="taskName">Task Name
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="team">Assigned Team
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="user">Assigned User
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="date">Due Date
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="taskDuration">Task Duration
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="status">Status
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+          <div class="th" mat-sort-header="requestor">Requestor
+            <img src="../../assets//images/sort-arrows.png" alt="">
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="row tbody" *ngFor="let item of sortedData">
+            <div class="td td-id">{{item.caseName}}</div>
+            <div class="td pl-3">
+              {{item.required}}
+            </div>
+            <div class="td">
+              {{item.activity}}
+            </div>
+            <div class="td">
+              {{item.taskName}}
+            </div>
+            <div class="td">
+              {{item.team}}
+            </div>
+            <div class="td">
+              {{item.user}}
+            </div>
+            <div class="td">
+              {{item.date}}
+            </div>
+            <div class="td">
+              {{item.taskDuration}}
+            </div>
+            <div class="td">
+              {{item.status}}
+            </div>
+            <div class="td">
+              {{item.requestor}}
+              <img src="../../assets//images/icons8-profile-80.png" class="float-right" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,65 @@
+
+
+<div class="main-container">
+  <div class="side-nav-container" [ngClass]="isTrue ? 'close-width':''">
+    <div class="side-nav-header hidden-xs" *ngIf="!isTrue">
+      <span class="first mr-2">Wipro</span>
+      <span class="next">holmes</span>
+    </div>
+    <img class="main-logo hidden-xs" *ngIf="isTrue" src="../assets/images/wipro-logo.png" alt="">
+    <img class="main-logo hidden-lg" src="../assets/images/wipro-logo.png" alt="">
+    <div class="navigaton-wrapper">
+      <ul>
+        <li (click)="openNav()">
+          <img *ngIf="!isTrue" src="../assets/images/back-right.png" class="float-right slide-arrow" alt="">
+          <img *ngIf="isTrue" src="../assets/images/back-left.png" class="float-right slide-arrow" alt="">
+        </li>
+        <li>
+          <a routerLink="/home" id='pending-active' routerLinkActive="active-link">
+            <img src="../assets/images/surface775796.svg" alt="">
+            <span *ngIf="!isTrue">Entity Management</span>
+          </a>
+        </li>
+        <li>
+          <a id='pending-active' routerLinkActive="active-link">
+            <img src="../assets/images/statistics.svg" alt="">
+            <span *ngIf="!isTrue">Case Management</span>
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="../assets/images/menu.svg" alt="">
+            <span *ngIf="!isTrue">Task List</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="">
+            <img src="../assets/images/multiple-files-stack.svg" alt="">
+            <span *ngIf="!isTrue">Documentation</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-editor-container" [ngClass]="isTrue ? 'open-width':''">
+    <header class="main-header">
+      <div class="header-wrapper">
+        <p>Case Management</p>
+        <ul>
+          <li class="mr-2">
+            <img src="../assets/images/Portraitr@2x.png" alt="">
+          </li>
+          <li>
+            <select name="">
+              <option value=""> Bimalesh</option>
+              <option value=""> Sachin</option>
+              <option value=""> Vishnu</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
