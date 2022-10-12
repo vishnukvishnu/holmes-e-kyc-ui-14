@@ -1,0 +1,73 @@
+ [{
+     "clientid": 4313,
+     "clientname": "Bango PLC",
+     "clienttype": "bank",
+     "location": "USA",
+     "event": "yes",
+     "createid": "Bimalesh"
+   },
+   {
+     "clientid": 123,
+     "clientname": "xyz Limited",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "no",
+     "createid": "Ram"
+   },
+   {
+     "clientid": 523,
+     "clientname": "Bango PLC",
+     "clienttype": "bank",
+     "location": "India",
+     "event": "yes",
+     "createid": "Vishnu"
+   },
+   {
+     "clientid": 223,
+     "clientname": "Bango PLC",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "yes",
+     "createid": "Gopal"
+   },
+   {
+     "clientid": 223,
+     "clientname": "Bango PLC",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "yes",
+     "createid": "Gopal"
+   },
+   {
+     "clientid": 223,
+     "clientname": "xyz Limited",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "yes",
+     "createid": "Gopal"
+   },
+   {
+     "clientid": 223,
+     "clientname": "PLC Limited",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "yes",
+     "createid": "Gopal"
+   },
+   {
+     "clientid": 223,
+     "clientname": "PLC Limited",
+     "clienttype": "corporate",
+     "location": "UK",
+     "event": "yes",
+     "createid": "Gopal"
+   },
+   {
+     "clientid": 723,
+     "clientname": "PLC Limited",
+     "clienttype": "bank",
+     "location": "UK",
+     "event": "no",
+     "createid": "RAvi"
+   }
+ ]

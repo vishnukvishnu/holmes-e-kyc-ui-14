@@ -1,0 +1,37 @@
+[{
+    "caseId": "101",
+    "caseType": "Type-9",
+    "caseStatus": "open",
+    "unit": "GS",
+    "updata": "Holmes",
+    "updateDate": "14-08-1995",
+    "create": "Jain Bhimal"
+  },
+  {
+    "caseId": "601",
+    "caseType": "Type-1",
+    "caseStatus": "close",
+    "unit": "FS",
+    "updata": "Wipro Holmes",
+    "updateDate": "21-08-1995",
+    "create": "Ram mohan"
+  },
+  {
+    "caseId": "131",
+    "caseType": "Type-8",
+    "caseStatus": "open",
+    "unit": "TS",
+    "updata": "Holmes",
+    "updateDate": "25-08-1995",
+    "create": "Bimalesh"
+  },
+  {
+    "caseId": "531",
+    "caseType": "Type-3",
+    "caseStatus": "open",
+    "unit": "FS",
+    "updata": "Holmes",
+    "updateDate": "11-08-1995",
+    "create": "Vishnu"
+  }
+]

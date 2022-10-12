@@ -9,7 +9,7 @@ import { PopupService } from "../services/popup-service.service";
   styleUrls: ["./advanced-search.component.scss"]
 })
 export class AdvancedSearchComponent implements OnInit {
-  form: FormGroup | undefined;
+  form: FormGroup | any;
   @Output() groupFilters: EventEmitter<any> = new EventEmitter<any>();
   searchText: string = "";
   close: boolean = true;

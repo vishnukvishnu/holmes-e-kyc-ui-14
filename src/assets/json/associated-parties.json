@@ -1,0 +1,56 @@
+ [
+   {
+     "id": 233,
+     "entityName": "Hellenic Bank Investments",
+     "relationship": "Parent Account",
+     "relatedto": "Iris Bohnet",
+     "ownership": "67%",
+     "updatedby": "sujith T",
+      "updatedDate": "25-aug-2019"
+   },
+   {
+     "id": 633,
+     "entityName": "SBI bank of India",
+     "relationship": "Parent Account",
+     "relatedto": "Goutham Mohan",
+     "ownership": "15%",
+     "updatedby": "Go Sullivan",
+     "updatedDate": "23-aug-2019"
+   },
+   {
+     "id": 833,
+     "entityName": "Hdfc of india",
+     "relationship": "Parent Account",
+     "relatedto": "Rajesh Aman",
+     "ownership": "34%",
+     "updatedby": "manu jacob",
+     "updatedDate": "15-aug-2019"
+   },
+   {
+     "id": 133,
+     "entityName": "SBI bank of India",
+     "relationship": "Parent Account",
+     "relatedto": "Thomas",
+     "ownership": "57%",
+     "updatedby": "Amal Joy",
+     "updatedDate": "12-aug-2019"
+   },
+
+   {
+     "id": 833,
+     "entityName": "Hdfc of india",
+     "relationship": "Parent Account",
+     "relatedto": "Rajesh Aman",
+     "ownership": "58%",
+     "updatedby": "Go Sullivan",
+     "updatedDate": "26-aug-2019"
+   }, {
+     "id": 133,
+     "entityName": "icici Bank limited",
+     "relationship": "Parent Account",
+     "relatedto": "Thomas",
+     "ownership": "25%",
+     "updatedby": "Arum babu",
+     "updatedDate": "25-aug-2019"
+   }
+ ]

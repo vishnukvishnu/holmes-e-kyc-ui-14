@@ -67,25 +67,25 @@ export class EntityMasterComponent implements OnChanges {
     this.toggle = true;
     this.popupService.popUp(this.toggle);
   }
-  // accordianToggle(i) {
-  //   this.accordian = !this.accordian;
-  //   if (this.accordian == true) {
-  //     this.document
-  //       .getElementById("accordianPlus" + i)
-  //       .classList.add("inActive");
-  //     this.document
-  //       .getElementById("accordianMinus" + i)
-  //       .classList.remove("inActive");
-  //   }
-  //   if (this.accordian == false) {
-  //     this.document
-  //       .getElementById("accordianPlus" + i)
-  //       .classList.remove("inActive");
-  //     this.document
-  //       .getElementById("accordianMinus" + i)
-  //       .classList.add("inActive");
-  //   }
-  // }
+  accordianToggle(i) {
+    this.accordian = !this.accordian;
+    if (this.accordian == true) {
+      this.document
+        .getElementById("accordianPlus" + i)
+        .classList.add("inActive");
+      this.document
+        .getElementById("accordianMinus" + i)
+        .classList.remove("inActive");
+    }
+    if (this.accordian == false) {
+      this.document
+        .getElementById("accordianPlus" + i)
+        .classList.remove("inActive");
+      this.document
+        .getElementById("accordianMinus" + i)
+        .classList.add("inActive");
+    }
+  }
   clearAll() {
     this.clearHide = true;
     this.GetSearchdata.clientid = "";
@@ -115,37 +115,37 @@ export class EntityMasterComponent implements OnChanges {
     this.filteredUsers = this.users; //Reset User List
     const keys = Object.keys(filters);
     const filterUser = (user: { [x: string]: string | number; }) => {
-      let result = keys.map(key => {
-        if (!~key.indexOf("age")) {
-          if (user[key]) {
-            return String(user[key])
-              .toLowerCase()
-              .startsWith(String(filters[key]).toLowerCase());
-          } else {
-            return false;
-          }
-        }
-      });
+      // let result = keys.map((key) => {
+      //   if (!~key.indexOf("age")) {
+      //     if (user[key]) {
+      //       return String(user[key])
+      //         .toLowerCase()
+      //         .startsWith(String(filters[key]).toLowerCase());
+      //     } else {
+      //       return false;
+      //     }
+      //   }
+      // });
       // To Clean Array from undefined if the age is passed so the map will fill the gap with (undefined)
-      result = result.filter(it => it !== undefined);
-      // Filter the Age out from the other filters
-      if (filters["ageto"] && filters["agefrom"]) {
-        if (user["age"]) {
-          if (
-            +user["age"] >= +filters["agefrom"] &&
-            +user["age"] <= +filters["ageto"]
-          ) {
-            result.push(true);
-          } else {
-            result.push(false);
-          }
-        } else {
-          result.push(false);
-        }
-      }
-      return result.reduce((acc, cur: any) => {
-        return acc & cur;
-      }, 1);
+      // let result = result.filter(it => it !== undefined);
+      // // Filter the Age out from the other filters
+      // if (filters["ageto"] && filters["agefrom"]) {
+      //   if (user["age"]) {
+      //     if (
+      //       +user["age"] >= +filters["agefrom"] &&
+      //       +user["age"] <= +filters["ageto"]
+      //     ) {
+      //       result.push(true);
+      //     } else {
+      //       result.push(false);
+      //     }
+      //   } else {
+      //     result.push(false);
+      //   }
+      // }
+      // return result.reduce((acc, cur: any) => {
+      //   return acc & cur;
+      // }, 1);
     };
     this.filteredUsers = this.users.filter(filterUser);
   }

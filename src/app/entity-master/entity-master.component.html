@@ -95,12 +95,12 @@
       <div class="table-body-row">
         <div class="row mr-0 ml-0 "
           *ngFor="let user of filteredUsers | filter: searchByKeyword:'name' | grdFilter: {clientid:searchText,clientname:searchText,location:searchText,createid:searchText}; let i = index">
-          <!-- <div class="col-2 td td-id" data-toggle="collapse" [attr.data-target]="'#demo' + i"
+          <div class="col-2 td td-id" data-toggle="collapse" [attr.data-target]="'#demo' + i"
             (click)="accordianToggle(i)">
             <img src="../../assets//images/add-icon.png" [id]="'accordianPlus' + i" class="mr-2" alt="" />
             <img src="../../assets//images/minus-icon.png" [id]="'accordianMinus' + i" class="mr-2 inActive" alt="" />
             {{ user.clientid }}
-          </div> -->
+          </div>
           <div class="col-2 td">{{ user.clientname }}</div>
           <div class="col-2 td">{{ user.clienttype }}</div>
           <div class="col-2 td">{{ user.location }}</div>
